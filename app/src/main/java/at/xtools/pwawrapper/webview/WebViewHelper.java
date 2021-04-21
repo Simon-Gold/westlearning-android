@@ -30,12 +30,14 @@ public class WebViewHelper {
     private UIManager uiManager;
     private WebView webView;
     private WebSettings webSettings;
+    private String urlString;
 
-    public WebViewHelper(Activity activity, UIManager uiManager) {
+    public WebViewHelper(Activity activity, UIManager uiManager,String url) {
         this.activity = activity;
         this.uiManager = uiManager;
         this.webView = (WebView) activity.findViewById(R.id.webView);
         this.webSettings = webView.getSettings();
+        this.urlString = url;
     }
 
     /**
@@ -204,7 +206,8 @@ public class WebViewHelper {
     // handle external urls
     private boolean handleUrlLoad(WebView view, String url) {
         // prevent loading content that isn't ours
-        if (!url.startsWith(Constants.WEBAPP_URL)) {
+
+        if (!url.startsWith(urlString)) {
             // stop loading
             // stopping only would cause the PWA to freeze, need to reload the app as a workaround
             view.stopLoading();
@@ -243,16 +246,11 @@ public class WebViewHelper {
 
     // load app startpage
     public void loadHome() {
-        webView.loadUrl(Constants.WEBAPP_URL);
+        webView.loadUrl(urlString);
     }
 
     // load URL from intent
     public void loadIntentUrl(String url) {
-        if (!url.equals("") && url.contains(Constants.WEBAPP_HOST)) {
-            webView.loadUrl(url);
-        } else {
-            // Fallback
-            loadHome();
-        }
+    //    webView.loadUrl(url);
     }
 }

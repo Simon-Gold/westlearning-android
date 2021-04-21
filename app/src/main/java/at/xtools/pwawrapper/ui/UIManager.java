@@ -26,6 +26,8 @@ public class UIManager {
     private LinearLayout offlineContainer;
     private boolean pageLoaded = false;
 
+    private  String urlString;
+
     public UIManager(Activity activity) {
         this.activity = activity;
         this.progressBar = (ProgressBar) activity.findViewById(R.id.progressBarBottom);
@@ -37,7 +39,7 @@ public class UIManager {
         offlineContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                webView.loadUrl(Constants.WEBAPP_URL);
+                webView.loadUrl(urlString);
                 setOffline(false);
             }
         });

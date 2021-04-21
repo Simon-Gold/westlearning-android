@@ -2,6 +2,7 @@ package at.xtools.pwawrapper;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private UIManager uiManager;
     private WebViewHelper webViewHelper;
     private boolean intentHandled = false;
+    String urlString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Setup Helpers
+        urlString = getIntent().getStringExtra("Website_url");
         uiManager = new UIManager(this);
-        webViewHelper = new WebViewHelper(this, uiManager);
+        webViewHelper = new WebViewHelper(this, uiManager, getIntent().getStringExtra("Website_url"));
 
         // Setup App
         webViewHelper.setupWebView();
