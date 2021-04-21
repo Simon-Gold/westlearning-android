@@ -6,4 +6,8 @@
     <color name="colorAccent">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
     <color name="green">#4caf50</color>
+
+    <color name="Buttoncolor">#45699d</color>
+    <color name="ButtoncolorText">#7692b8</color>
+
 </resources>
