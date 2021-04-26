@@ -6,4 +6,7 @@
     <string name="noapp_description">No App on this device can carry out this action.</string>
     <string name="domain">Domain</string>
     <string name="next">NEXT</string>
+    <string name="ie_portal_name_is_this_part_of_the_site_url_http_mysite_westnetmlp_com">ie. Portal name is this part of the site URL.\nhttp://MySite.westnetmlp.com</string>
+    <string name="please_enter_portal_name_to_access_your_lms_site">Please enter portal name to access your LMS site.</string>
+    <string name="welcome">Welcome!</string>
 </resources>

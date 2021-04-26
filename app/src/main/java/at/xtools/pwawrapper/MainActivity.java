@@ -38,16 +38,16 @@ public class MainActivity extends AppCompatActivity {
             String intentAction = i.getAction();
             // Handle URLs opened in Browser
              if (!intentHandled && intentAction != null && intentAction.equals(Intent.ACTION_VIEW)){
-                    Uri intentUri = i.getData();
-                    String intentText = "";
-                    if (intentUri != null){
-                        intentText = intentUri.toString();
-                    }
-                    // Load up the URL specified in the Intent
-                    if (!intentText.equals("")) {
-                        intentHandled = true;
-                        webViewHelper.loadIntentUrl(intentText);
-                    }
+                    // Uri intentUri = i.getData();
+                    // String intentText = "";
+                    // if (intentUri != null){
+                    //     intentText = intentUri.toString();
+                    // }
+                    // // Load up the URL specified in the Intent
+                    // if (!intentText.equals("")) {
+                    //     intentHandled = true;
+                    //     webViewHelper.loadIntentUrl(intentText);
+                    // }
              } else {
                  // Load up the Web App
                  webViewHelper.loadHome();
